@@ -1,21 +1,9 @@
 import styles from "./AuditCta.module.css";
 
 export default function AuditCta() {
-  const emailBody = [
-    "Hi Sam,",
-    "",
-    "I'd like a website audit.",
-    "",
-    "My current website is:",
-    "My business name is:",
-    "The main service I offer is:",
-    "",
-    "Thanks!",
-  ].join("\n");
-
   const auditEmailLink = `mailto:samwilk1898@gmail.com?subject=${encodeURIComponent(
     "Website audit request",
-  )}&body=${encodeURIComponent(emailBody)}`;
+  )}`;
 
   return (
     <section className={styles.ctaSection} id="contact">
@@ -27,9 +15,19 @@ export default function AuditCta() {
           conversion improvements that would matter most.
         </p>
       </div>
-      <a className={styles.primaryButton} href={auditEmailLink}>
-        Request an audit
-      </a>
+      <div className={styles.actions}>
+        <a className={styles.primaryButton} href={auditEmailLink}>
+          Request an audit
+        </a>
+        <a
+          className={styles.secondaryButton}
+          href="https://calendly.com/samwilk1898/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Schedule a call
+        </a>
+      </div>
     </section>
   );
 }

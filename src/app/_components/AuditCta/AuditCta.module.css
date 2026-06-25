@@ -10,7 +10,7 @@
   background: #e8f1e2;
 }
 
-.ctaSection div {
+.ctaSection > div:first-child {
   max-width: 720px;
 }
 
@@ -36,16 +36,22 @@
   line-height: 1.7;
 }
 
-.primaryButton {
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: 300px;
+}
+
+.primaryButton,
+.secondaryButton {
   display: inline-flex;
   min-height: 48px;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   padding: 0 20px;
-  background: #f4a534;
-  color: #182113;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
   font-weight: 800;
   text-align: center;
   transition:
@@ -54,15 +60,40 @@
     background 180ms ease;
 }
 
-.primaryButton:hover {
+.primaryButton {
+  background: #f4a534;
+  color: #182113;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.secondaryButton {
+  border: 1px solid #b7c9af;
+  background: #ffffff;
+  color: #132018;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
   transform: translateY(-2px);
+}
+
+.primaryButton:hover {
   background: #ffb84a;
+}
+
+.secondaryButton:hover {
+  background: #f7fbf5;
 }
 
 @media (max-width: 900px) {
   .ctaSection {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 
@@ -71,6 +102,10 @@
     width: min(100% - 36px, 1180px);
     gap: 24px;
     padding: 26px;
+  }
+
+  .actions {
+    min-width: 0;
   }
 
   .ctaSection a {
