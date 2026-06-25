@@ -1,0 +1,162 @@
+.page {
+  min-height: 100vh;
+  color: #132018;
+  background: #f7fbf5;
+}
+
+.headerWrap,
+.hero,
+.section,
+.featureBand {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.headerWrap {
+  padding-top: 24px;
+}
+
+.hero {
+  padding: 84px 0 72px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: #f4a534;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 900px;
+  color: #132018;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 740px;
+  margin-top: 24px;
+  color: #566653;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.section {
+  padding: 24px 0 92px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  min-height: 245px;
+  border: 1px solid #dfe8da;
+  border-radius: 8px;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(27, 54, 33, 0.08);
+}
+
+.card h2 {
+  color: #132018;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.card p {
+  margin-top: 14px;
+  color: #566653;
+  line-height: 1.7;
+}
+
+.featureBand {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 52px;
+  align-items: start;
+  margin-bottom: 92px;
+  padding: 56px;
+  border-radius: 8px;
+  background: #132018;
+}
+
+.featureBand h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.listItem span {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f4a534;
+  color: #132018;
+  font-weight: 900;
+}
+
+@media (max-width: 900px) {
+  .cardGrid,
+  .featureBand {
+    grid-template-columns: 1fr;
+  }
+
+  .featureBand {
+    padding: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerWrap,
+  .hero,
+  .section,
+  .featureBand {
+    width: min(100% - 36px, 1180px);
+  }
+
+  .hero {
+    padding: 56px 0 48px;
+  }
+
+  .hero h1 {
+    font-size: 3.1rem;
+  }
+
+  .section {
+    padding-bottom: 64px;
+  }
+
+  .featureBand {
+    margin-bottom: 64px;
+    padding: 28px;
+  }
+}

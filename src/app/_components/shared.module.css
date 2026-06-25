@@ -1,0 +1,266 @@
+.header {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 0;
+}
+
+.brand {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.navLinks a {
+  transition: color 180ms ease;
+}
+
+.light {
+  color: #ffffff;
+}
+
+.light .navLinks {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.light .navLinks a:hover {
+  color: #ffffff;
+}
+
+.dark {
+  color: #132018;
+}
+
+.dark .navLinks {
+  color: #566653;
+}
+
+.dark .navLinks a:hover {
+  color: #132018;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: #f4a534;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sectionIntro {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.sectionIntro h2,
+.ctaSection h2 {
+  color: #132018;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.primaryButton {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0 20px;
+  background: #f4a534;
+  color: #182113;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  font-weight: 800;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  background: #ffb84a;
+}
+
+.sitePreview {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #132018;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.previewTopbar {
+  display: flex;
+  gap: 8px;
+  padding: 14px;
+  background: #eef3ea;
+}
+
+.previewTopbar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #8ca48a;
+}
+
+.previewHero {
+  min-height: 330px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    linear-gradient(180deg, rgba(10, 46, 28, 0.16), rgba(10, 46, 28, 0.82)),
+    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80");
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.previewHero p {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.previewHero h2 {
+  max-width: 360px;
+  margin-top: 10px;
+  font-size: 2.1rem;
+  line-height: 1.05;
+}
+
+.previewHero button {
+  width: fit-content;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 8px;
+  padding: 13px 16px;
+  background: #f4a534;
+  color: #182113;
+  font: inherit;
+  font-weight: 800;
+}
+
+.previewStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #e6ece2;
+}
+
+.previewStats div {
+  padding: 18px;
+  border-right: 1px solid #e6ece2;
+}
+
+.previewStats div:last-child {
+  border-right: 0;
+}
+
+.previewStats strong,
+.previewStats span {
+  display: block;
+}
+
+.previewStats strong {
+  font-size: 1.45rem;
+}
+
+.previewStats span {
+  margin-top: 4px;
+  color: #5d6f5d;
+  font-size: 0.84rem;
+}
+
+.ctaSection {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 44px;
+  border-radius: 8px;
+  background: #e8f1e2;
+}
+
+.ctaSection div {
+  max-width: 720px;
+}
+
+.ctaSection p {
+  margin-top: 12px;
+  color: #566653;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .sitePreview {
+    max-width: 620px;
+  }
+
+  .ctaSection {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navLinks {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 0.84rem;
+  }
+
+  .primaryButton,
+  .ctaSection a {
+    width: 100%;
+  }
+
+  .previewHero {
+    min-height: 280px;
+    padding: 22px;
+  }
+
+  .previewHero h2 {
+    font-size: 1.65rem;
+  }
+
+  .previewStats {
+    grid-template-columns: 1fr;
+  }
+
+  .previewStats div {
+    border-right: 0;
+    border-bottom: 1px solid #e6ece2;
+  }
+
+  .previewStats div:last-child {
+    border-bottom: 0;
+  }
+
+  .ctaSection {
+    width: min(100% - 36px, 1180px);
+    padding: 28px;
+  }
+}
