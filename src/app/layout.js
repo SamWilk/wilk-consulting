@@ -1,18 +1,19 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Jacksonville Website Design for Local Service Businesses",
+  title: "Sam Wilk Consulting | Websites for Local Businesses",
   description:
-    "Modern, fast, SEO-ready websites for Jacksonville pressure washing, construction, landscaping, and home service companies.",
+    "Modern, fast websites for local businesses, backed by software engineering experience and a practical delivery mindset.",
   icons: {
     icon: "/site-icon.svg",
   },
   keywords: [
+    "Sam Wilk",
     "Jacksonville web design",
+    "website consultant",
+    "local business websites",
+    "software engineer Jacksonville",
     "local SEO Jacksonville",
-    "contractor websites",
-    "pressure washing website",
-    "landscaping website design",
   ],
 };
 

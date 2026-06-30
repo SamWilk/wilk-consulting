@@ -1,23 +1,24 @@
 import styles from "./SocialHighlights.module.css";
+import { profile } from "../../_data/portfolio";
 
 const socialLinks = [
   {
-    name: "Facebook",
-    handle: "Recent jobs, reviews, and local updates",
-    href: "https://www.facebook.com/",
-    icon: "f",
+    name: "GitHub",
+    handle: "Code, side projects, and recent repository work",
+    href: profile.github,
+    icon: "gh",
   },
   {
-    name: "Instagram",
-    handle: "Before-and-after project photos",
-    href: "https://www.instagram.com/",
-    icon: "ig",
+    name: "Live Portfolio",
+    handle: "Original single-page resume site",
+    href: profile.portfolio,
+    icon: "sw",
   },
   {
-    name: "X / Twitter",
-    handle: "Announcements and quick business updates",
-    href: "https://x.com/",
-    icon: "x",
+    name: "Calendly",
+    handle: "Quick path to a conversation",
+    href: profile.calendly,
+    icon: "30",
   },
 ];
 
@@ -25,11 +26,11 @@ export default function SocialHighlights() {
   return (
     <section className={styles.socialSection}>
       <div className={styles.content}>
-        <p className={styles.eyebrow}>Social profile connections</p>
-        <h2>Make it easy for customers to find proof beyond the website.</h2>
+        <p className={styles.eyebrow}>Proof and contact</p>
+        <h2>Give visitors a simple path to verify the work behind the site.</h2>
         <p>
-          A modern site can connect visitors to active Facebook, Instagram, and X/Twitter
-          profiles so they can see recent work, customer feedback, photos, and updates.
+          Alongside the consulting site, these links make it easy to review shipped
+          projects, the original resume portfolio, and a direct booking path.
         </p>
       </div>
 

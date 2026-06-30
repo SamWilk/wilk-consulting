@@ -4,6 +4,7 @@ import SectionIntro from "./_components/SectionIntro/SectionIntro";
 import SiteHeader from "./_components/SiteHeader/SiteHeader";
 import SocialHighlights from "./_components/SocialHighlights/SocialHighlights";
 import WebsitePreview from "./_components/WebsitePreview/WebsitePreview";
+import { experience, profile } from "./_data/portfolio";
 import styles from "./page.module.css";
 
 const businessTypes = [
@@ -41,13 +42,13 @@ const services = [
   },
   {
     title: "Local SEO Foundations",
-    copy: "Set up titles, descriptions, headings, service-area copy, schema-ready content, and pages built around what customers search.",
+    copy: "Set up titles, descriptions, headings, service-area copy, and pages built around what customers search.",
     href: "/local-seo-benefits",
   },
   {
-    title: "Lead-Focused Layouts",
-    copy: "Add visible calls to action, proof, reviews, service details, and quote forms so visitors know exactly what to do next.",
-    href: "#contact",
+    title: "About Sam",
+    copy: "See the engineering background behind the consulting work, including product experience, C# services, React apps, and production systems.",
+    href: "/about",
   },
 ];
 
@@ -60,7 +61,15 @@ const checklist = [
   "Clear quote request flow",
 ];
 
+const founderPoints = [
+  `Built and maintained production APIs, services, and web applications in ${profile.location}.`,
+  "Worked across enterprise systems, event-driven architectures, and client-facing interfaces.",
+  `Brings a software engineering mindset to consulting work: performance, maintainability, and clear execution.`,
+];
+
 export default function Home() {
+  const currentRole = experience[0];
+
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
@@ -78,8 +87,8 @@ export default function Home() {
               <a className={styles.primaryButton} href="#contact">
                 Get a website audit
               </a>
-              <Link className={styles.secondaryButton} href="/website-benefits">
-                See what changes
+              <Link className={styles.secondaryButton} href="/about">
+                About Sam
               </Link>
             </div>
             <div className={styles.businessTypes} aria-label="Example business types">
@@ -104,6 +113,31 @@ export default function Home() {
               <strong>{win.metric}</strong>
               <h3>{win.label}</h3>
               <p>{win.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <SectionIntro
+          eyebrow="Who is building it"
+          title="Consulting backed by hands-on engineering experience."
+        />
+        <div className={styles.serviceGrid}>
+          <article className={styles.serviceCard}>
+            <h3>{profile.name}</h3>
+            <p>
+              {profile.summary} Right now that includes {currentRole.title.toLowerCase()} work at{" "}
+              {currentRole.company}, plus earlier product and platform work.
+            </p>
+            <Link href="/about">Read the background</Link>
+          </article>
+
+          {founderPoints.slice(0, 2).map((point) => (
+            <article className={styles.serviceCard} key={point}>
+              <h3>Practical delivery</h3>
+              <p>{point}</p>
+              <Link href="/projects">See projects</Link>
             </article>
           ))}
         </div>
@@ -139,7 +173,7 @@ export default function Home() {
             <article className={styles.serviceCard} key={service.title}>
               <h3>{service.title}</h3>
               <p>{service.copy}</p>
-              <Link href={service.href}>Explore benefits</Link>
+              <Link href={service.href}>Explore</Link>
             </article>
           ))}
         </div>

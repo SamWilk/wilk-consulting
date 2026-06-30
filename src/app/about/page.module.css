@@ -1,0 +1,289 @@
+.page {
+  min-height: 100vh;
+  color: #132018;
+  background: #f7fbf5;
+}
+
+.headerWrap,
+.hero,
+.section,
+.timelineSection,
+.band,
+.socialWrap {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.headerWrap {
+  padding-top: 24px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 40px;
+  align-items: start;
+  padding: 84px 0 56px;
+}
+
+.eyebrow,
+.period {
+  margin-bottom: 12px;
+  color: #f4a534;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.band h2 {
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 900px;
+  color: #132018;
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  line-height: 0.96;
+}
+
+.hero p:not(.eyebrow),
+.snapshotCard p {
+  margin-top: 24px;
+  color: #566653;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.snapshotCard,
+.card,
+.timelineItem {
+  border: 1px solid #dfe8da;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(27, 54, 33, 0.08);
+}
+
+.snapshotCard {
+  display: grid;
+  gap: 12px;
+  padding: 26px;
+}
+
+.snapshotCard span {
+  color: #5d6f5d;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.snapshotCard strong {
+  display: block;
+  color: #132018;
+  font-size: 1.2rem;
+}
+
+.snapshotCard p {
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+.section {
+  padding: 24px 0 72px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 30px;
+}
+
+.card h2,
+.timelineItem h2 {
+  color: #132018;
+  font-size: 1.4rem;
+  line-height: 1.15;
+}
+
+.card p,
+.company,
+.responsibilityList {
+  margin-top: 14px;
+  color: #566653;
+  line-height: 1.7;
+}
+
+.timelineSection {
+  display: grid;
+  gap: 18px;
+  padding-bottom: 92px;
+}
+
+.timelineItem {
+  padding: 30px;
+}
+
+.responsibilityList {
+  padding-left: 20px;
+}
+
+.band {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 52px;
+  align-items: start;
+  margin-bottom: 92px;
+  padding: 56px;
+  border-radius: 8px;
+  background: #132018;
+}
+
+.band h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.05;
+}
+
+.bandContent {
+  display: grid;
+  gap: 20px;
+}
+
+.skillGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skillItem {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.projectList {
+  display: grid;
+  gap: 12px;
+}
+
+.projectItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.projectItem strong {
+  font-size: 1rem;
+}
+
+.projectItem span {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.9rem;
+}
+
+.socialWrap {
+  margin-bottom: 92px;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .band,
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .band {
+    padding: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerWrap,
+  .hero,
+  .section,
+  .timelineSection,
+  .band,
+  .socialWrap {
+    width: min(100% - 36px, 1180px);
+  }
+
+  .hero {
+    gap: 28px;
+    padding: 48px 0 42px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.45rem, 14vw, 3.15rem);
+    line-height: 0.98;
+  }
+
+  .hero p:not(.eyebrow),
+  .snapshotCard p {
+    margin-top: 18px;
+    font-size: 1.02rem;
+  }
+
+  .card,
+  .timelineItem,
+  .snapshotCard {
+    padding: 24px;
+  }
+
+  .timelineSection {
+    padding-bottom: 64px;
+  }
+
+  .band {
+    gap: 28px;
+    margin-bottom: 64px;
+    padding: 26px;
+  }
+
+  .band h2 {
+    font-size: clamp(2rem, 12vw, 2.7rem);
+  }
+
+  .projectItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .socialWrap {
+    margin-bottom: 64px;
+  }
+}
+
+@media (max-width: 380px) {
+  .headerWrap,
+  .hero,
+  .section,
+  .timelineSection,
+  .band,
+  .socialWrap {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .card,
+  .timelineItem,
+  .snapshotCard,
+  .band {
+    padding: 22px;
+  }
+}

@@ -1,9 +1,9 @@
 .ctaSection {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  align-items: start;
   gap: 32px;
   padding: 44px;
   border-radius: 8px;
@@ -36,64 +36,13 @@
   line-height: 1.7;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 12px;
-  min-width: 300px;
-}
-
-.primaryButton,
-.secondaryButton {
-  display: inline-flex;
-  min-height: 48px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  padding: 0 20px;
-  font-weight: 800;
-  text-align: center;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease;
-}
-
-.primaryButton {
-  background: #f4a534;
-  color: #182113;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-}
-
-.secondaryButton {
-  border: 1px solid #b7c9af;
-  background: #ffffff;
-  color: #132018;
-}
-
-.primaryButton:hover,
-.secondaryButton:hover {
-  transform: translateY(-2px);
-}
-
-.primaryButton:hover {
-  background: #ffb84a;
-}
-
-.secondaryButton:hover {
-  background: #f7fbf5;
+.formWrap {
+  width: 100%;
 }
 
 @media (max-width: 900px) {
   .ctaSection {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .actions {
-    width: 100%;
-    justify-content: flex-start;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -102,14 +51,6 @@
     width: min(100% - 36px, 1180px);
     gap: 24px;
     padding: 26px;
-  }
-
-  .actions {
-    min-width: 0;
-  }
-
-  .ctaSection a {
-    width: 100%;
   }
 
   .ctaSection h2 {
