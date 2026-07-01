@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   width: min(1180px, 100%);
   margin: 0 auto;
   display: flex;
@@ -28,6 +29,31 @@
   transition: color 180ms ease;
 }
 
+.menuButton {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menuBar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.menuButton {
+  flex-direction: column;
+  gap: 4px;
+}
+
 .light {
   color: #ffffff;
 }
@@ -38,6 +64,12 @@
 
 .light .navLinks a:hover {
   color: #ffffff;
+}
+
+.light .menuButton {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .dark {
@@ -52,46 +84,64 @@
   color: #132018;
 }
 
+.dark .menuButton {
+  color: #132018;
+  border-color: #d8e4d3;
+  background: #ffffff;
+}
+
 @media (max-width: 640px) {
   .header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+  }
+
+  .brand {
+    max-width: calc(100% - 56px);
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .menuButton {
+    display: inline-flex;
+    flex: 0 0 auto;
   }
 
   .navLinks {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 0.84rem;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 10;
+    display: none;
+    width: min(260px, 100%);
+    padding: 10px;
+    border: 1px solid #d8e4d3;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(27, 54, 33, 0.12);
+    color: #132018;
+  }
+
+  .open {
+    display: grid;
+    gap: 4px;
   }
 
   .navLinks a {
     min-height: 42px;
-    border-radius: 999px;
+    border-radius: 8px;
     padding: 0 12px;
+    justify-content: flex-start;
   }
 
-  .light .navLinks a {
-    background: rgba(255, 255, 255, 0.12);
-  }
-
+  .light .navLinks a,
   .dark .navLinks a {
+    background: #f4f7f2;
+    color: #132018;
+  }
+
+  .light .navLinks a:hover,
+  .dark .navLinks a:hover {
     background: #e8f1e2;
-  }
-}
-
-@media (max-width: 380px) {
-  .brand {
-    font-size: 1rem;
-  }
-
-  .navLinks {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .navLinks a {
-    justify-content: center;
+    color: #132018;
   }
 }
